@@ -1,51 +1,66 @@
 .top-sect {
-  padding: 65px 0;
+  padding: 10px 0 30px;
 
   @media only screen and (max-width: $breakpoint-lg) {
-    padding: 15px 0 50px;
+    padding: 15px 0;
   }
 
   .inner-wrap {
     position: relative;
-    min-height: 470px;
+    min-height: 425px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 
     @media only screen and (max-width: $breakpoint-lg) {
-      min-height: 350px;
+      min-height: 300px;
     }
 
     @media only screen and (max-width: $breakpoint-640) {
-      min-height: auto;
+      min-height: 195px;
     }
+
+    @media only screen and (max-width: $breakpoint-480) {
+      align-items: center;
+    }
+
 
     &:after {
       content: '';
       position: absolute;
-      top: 0;
-      left: 550px;
+      top: 50%;
+      //left: 550px;
+      right: 80px;
       display: block;
-      width: 536px;
+      //width: 536px;
+      transform: translateY(-50%);
+      width: calc(50% - 80px);
       height: 400px;
       background: url("../images/top-screen-bg.png") no-repeat;
       background-size: contain;
       background-position: top center;
 
       @media only screen and (max-width: $breakpoint-xl) {
-        left: 450px;
+        right: 25px;
+        width: calc(50% - 25px);
       }
 
       @media only screen and (max-width: $breakpoint-lg) {
         width: 400px;
         height: 280px;
-        left: unset;
-        right: 0;
-        top: 20%;
+      }
+
+      @media only screen and (max-width: $breakpoint-md) {
+        right: 10px;
+        width: calc(50% - 10px);
       }
 
       @media only screen and (max-width: $breakpoint-640) {
-        width: 180px;
-        height: 126px;
-        right: 20px;
-        top: 16%;
+        opacity: 0.3;
+        top: 0;
+        transform: none;
+        width: 260px;
+        height: 195px;
       }
     }
   }
@@ -55,33 +70,46 @@
     font-size: 3.9375rem;
     font-weight: 900;
     line-height: 1.2;
-    width: 100%;
-    max-width: 470px;
+    width: 50%;
+    //max-width: 470px;
     margin-bottom: 45px;
     position: relative;
     z-index: 1;
+    text-transform: uppercase;
+
+    @media only screen and (max-width: $breakpoint-640) {
+      width: 100%;
+    }
+
+    @media only screen and (max-width: $breakpoint-480) {
+      text-align: center;
+    }
   }
 }
 
 .btn--prom {
-  width: 100%;
-  max-width: 335px;
-  color: #fff;
-  background-color: var(--purple);
-  border: 2px solid var(--purple);
-  box-shadow: var(--bottom-shadow-alpha-green-40);
+  max-width: 220px;
+  border-radius: 0;
+  border: 1px solid var(--orange);
   position: relative;
   z-index: 1;
   line-height: 1.1;
+  font-weight: 700;
 
   @media only screen and (max-width: $breakpoint-sm) {
     font-size: 1rem;
-    width: 235px;
+  }
+
+  @media only screen and (max-width: $breakpoint-480) {
+    background: linear-gradient(to top, var(--yellow), var(--orange));
+    color: #fff;
+    border: 0 solid var(--orange);
   }
 
   &:hover {
-    background-color: #fff;
-    border: 2px solid var(--orange);
-    color: var(--orange)
+    //background-color:var(--orange);
+    background: linear-gradient(to top, var(--yellow), var(--orange));
+    color: #fff;
+    border: 0 solid var(--orange);
   }
 }
